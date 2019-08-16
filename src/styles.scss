@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import './styles/abstracts/variables';
+*,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html{
+  font-size: 50%;
+}
+body{
+  font-family: 'Crimson Text', serif;
+  box-sizing: border-box;
+  background-color: $lightGray;
+}
