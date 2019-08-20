@@ -1,0 +1,13 @@
+.dashboard{
+  display: flex;
+}
+.content{
+  flex: 1;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: #fff;
+  padding-top: 40px;
+}
+[data-header] {
+  text-align: center;
+}

@@ -1,0 +1,48 @@
+@import '../../../styles/abstracts/variables';
+
+.projects{
+    margin: 30px auto;
+    background-color: $white;
+    box-shadow: 3px 0 7px 0px #ccc;
+    border-radius: 7px;
+    padding: 20px;
+    width: 98%;
+
+        &__heading{
+        font-weight: 700;
+        font-size: 2rem;
+        color: $mainColor;
+    }
+    &__content{
+        overflow-x: scroll;
+        margin-top: 20px;
+        &--header{
+            display: flex;
+            justify-content: space-between;
+
+            button{
+              border: 1px solid $mainColor;
+              outline: none;
+              padding: 11px 20px;
+              font-size: 1.6rem;
+              background-color: transparent;
+              cursor: pointer;
+              margin-right: 4px;
+            }
+        }
+    }
+    &__link{
+      text-decoration: none;
+      color: #0f0f0f;
+      font-size: 1.6rem;
+      border: 1px solid $mainColor;
+      padding: 10px 15px;
+      border-radius: 3px;
+      transition: all 4s;
+
+      &:hover{
+        background-image: linear-gradient(to right, #0c2480, #0c2480);
+        color: $white;
+      }
+  }
+}

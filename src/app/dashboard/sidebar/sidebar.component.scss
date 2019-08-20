@@ -1,0 +1,36 @@
+.sidebar {
+  background-color: #fff;
+  width: 280px;
+  height: 100%;
+
+  &__header {
+    padding: 30px 50px;
+    height: 15%;
+  }
+}
+
+.sidebar__nav {
+  // margin-top: 10%;
+  border-top-right-radius: 100px;
+  background-color: #0c2480;
+  height: 85%;
+  padding: 30px 50px;
+
+  ul li{
+    list-style: none;
+    margin-top: 30px;
+
+    a{
+      text-decoration: none;
+      font-family: 'Crimson Text', serif;
+      color: #c9c9c9;
+      font-size: 2.8rem;
+      font-weight: 400;
+    }
+  }
+}
+fa-icon{
+  margin-right: 20px;
+  font-size: 2.1rem;
+  color: #c9c9c9;
+}

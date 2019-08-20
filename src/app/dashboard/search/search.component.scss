@@ -1,0 +1,24 @@
+.search {
+  width: 40%;
+  margin: 0 auto;
+  &__input{
+    width: 100%;
+    border: 1px solid #d4d4d4;
+    padding: 16px;
+    border-radius:10px;
+    outline: none;
+    margin-right: -40px;
+    background-color: #f6f8fa;
+    font-family: inherit;
+    font-size: 20px;
+    &::placeholder{
+      font-size: 20px;
+      font-family: inherit;
+      color: #878787;
+    }
+  }
+  &__icon{
+    font-size: 2.2rem;
+    color: #626778;
+  }
+}
