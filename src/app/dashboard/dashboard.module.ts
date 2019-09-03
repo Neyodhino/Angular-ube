@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+//All components declaration
 import { DashboardComponent } from './dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchComponent } from './search/search.component';
@@ -19,7 +22,9 @@ import { ProjectsComponent } from './projects/projects.component';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DashboardModule { }

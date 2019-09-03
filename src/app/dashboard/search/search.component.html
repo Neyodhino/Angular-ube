@@ -3,9 +3,12 @@
         type="text"
         placeholder="search for project"
         class="search__input"
+        [(ngModel)]="searchTerm"
+        name="searchTerm"
     >
     <fa-icon
         [icon]="searchIcon"
         class="search__icon"
     ></fa-icon>
 </form>
+

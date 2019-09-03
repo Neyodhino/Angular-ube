@@ -2,7 +2,7 @@
     <li class="table-header">
         <div class="col col-1">S/N</div>
         <div class="col col-2">Name of Project</div>
-        <div class="col col-3">Constructor</div>
+        <div class="col col-3">Contractor</div>
         <div class="col col-4">Start Date</div>
         <div class="col col-5">End Date</div>
         <div class="col col-6">Year of Intervention</div>
@@ -10,284 +10,60 @@
         <div class="col col-8">LGA</div>
         <div class="col col-9">Project Status</div>
     </li>
-    <li class="table-row">
+    <li class="table-row" *ngFor="let project of projects; let i = index">
         <div
             class="col col-1"
             data-label="s/n"
         >
-            1
+            {{i}}
         </div>
         <div
             class="col col-2"
             data-label="nameOfProject"
         >
-            Construction of 10 classrooms
+            {{project.projectName}}
         </div>
         <div
             class="col col-3"
-            data-label="constructor"
+            data-label="contractor"
         >
-            Neyodhnino construction services
+            {{project.constructor}}
         </div>
         <div
             class="col col-4"
             data-label="startDate"
         >
-            12/10/2019
+            {{project.startDate}}
         </div>
         <div
             class="col col-5"
             data-label="endDate"
         >
-            12/10/2019
+            {{project.endDate}}
         </div>
         <div
             class="col col-6"
             data-label="yearOfIntervention"
         >
-            2017
+            {{project.interventionYear}}
         </div>
         <div
             class="col col-7"
             data-label="location"
         >
-            Osogbo
+            {{project.location}}
         </div>
         <div
             class="col col-8"
             data-label="lga"
         >
-            Ayedade local government
+            {{project.lga}}
         </div>
         <div
             class="col col-9"
             data-label="status"
         >
-            completed
-        </div>
-    </li>
-    <li class="table-row">
-        <div
-            class="col col-1"
-            data-label="s/n"
-        >
-            1
-        </div>
-        <div
-            class="col col-2"
-            data-label="nameOfProject"
-        >
-            Construction of 10 classrooms
-        </div>
-        <div
-            class="col col-3"
-            data-label="constructor"
-        >
-            Neyodhnino construction services
-        </div>
-        <div
-            class="col col-4"
-            data-label="startDate"
-        >
-            12/10/2019
-        </div>
-        <div
-            class="col col-5"
-            data-label="endDate"
-        >
-            12/10/2019
-        </div>
-        <div
-            class="col col-6"
-            data-label="yearOfIntervention"
-        >
-            2017
-        </div>
-        <div
-            class="col col-7"
-            data-label="location"
-        >
-            Osogbo
-        </div>
-        <div
-            class="col col-8"
-            data-label="lga"
-        >
-            Ayedade local government
-        </div>
-        <div
-            class="col col-9"
-            data-label="status"
-        >
-            completed
-        </div>
-    </li>
-    <li class="table-row">
-        <div
-            class="col col-1"
-            data-label="s/n"
-        >
-            1
-        </div>
-        <div
-            class="col col-2"
-            data-label="nameOfProject"
-        >
-            Construction of 10 classrooms
-        </div>
-        <div
-            class="col col-3"
-            data-label="constructor"
-        >
-            Neyodhnino construction services
-        </div>
-        <div
-            class="col col-4"
-            data-label="startDate"
-        >
-            12/10/2019
-        </div>
-        <div
-            class="col col-5"
-            data-label="endDate"
-        >
-            12/10/2019
-        </div>
-        <div
-            class="col col-6"
-            data-label="yearOfIntervention"
-        >
-            2017
-        </div>
-        <div
-            class="col col-7"
-            data-label="location"
-        >
-            Osogbo
-        </div>
-        <div
-            class="col col-8"
-            data-label="lga"
-        >
-            Ayedade local government
-        </div>
-        <div
-            class="col col-9"
-            data-label="status"
-        >
-            completed
-        </div>
-    </li>
-    <li class="table-row">
-        <div
-            class="col col-1"
-            data-label="s/n"
-        >
-            1
-        </div>
-        <div
-            class="col col-2"
-            data-label="nameOfProject"
-        >
-            Construction of 10 classrooms
-        </div>
-        <div
-            class="col col-3"
-            data-label="constructor"
-        >
-            Neyodhnino construction services
-        </div>
-        <div
-            class="col col-4"
-            data-label="startDate"
-        >
-            12/10/2019
-        </div>
-        <div
-            class="col col-5"
-            data-label="endDate"
-        >
-            12/10/2019
-        </div>
-        <div
-            class="col col-6"
-            data-label="yearOfIntervention"
-        >
-            2017
-        </div>
-        <div
-            class="col col-7"
-            data-label="location"
-        >
-            Osogbo
-        </div>
-        <div
-            class="col col-8"
-            data-label="lga"
-        >
-            Ayedade local government
-        </div>
-        <div
-            class="col col-9"
-            data-label="status"
-        >
-            completed
-        </div>
-    </li>
-    <li class="table-row">
-        <div
-            class="col col-1"
-            data-label="s/n"
-        >
-            1
-        </div>
-        <div
-            class="col col-2"
-            data-label="nameOfProject"
-        >
-            Construction of 10 classrooms
-        </div>
-        <div
-            class="col col-3"
-            data-label="constructor"
-        >
-            Neyodhnino construction services
-        </div>
-        <div
-            class="col col-4"
-            data-label="startDate"
-        >
-            12/10/2019
-        </div>
-        <div
-            class="col col-5"
-            data-label="endDate"
-        >
-            12/10/2019
-        </div>
-        <div
-            class="col col-6"
-            data-label="yearOfIntervention"
-        >
-            2017
-        </div>
-        <div
-            class="col col-7"
-            data-label="location"
-        >
-            Osogbo
-        </div>
-        <div
-            class="col col-8"
-            data-label="lga"
-        >
-            Ayedade local government
-        </div>
-        <div
-            class="col col-9"
-            data-label="status"
-        >
-            completed
+            {{project.status}}
         </div>
     </li>
 </ul>

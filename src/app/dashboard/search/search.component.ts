@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { faSearch, faTruckPickup} from '@fortawesome/free-solid-svg-icons';
+import { faSearch} from '@fortawesome/free-solid-svg-icons';
+import { CrudService } from '../../service/crud/crud.service';
+import { IProject } from 'src/app/models/project';
 
 @Component({
   selector: 'app-search',
@@ -8,11 +10,34 @@ import { faSearch, faTruckPickup} from '@fortawesome/free-solid-svg-icons';
 })
 export class SearchComponent implements OnInit {
 
+  projects: Array<IProject>;
+  filteredProject: Array<IProject>;
+
   searchIcon = faSearch;
+  _searchTerm: string;
 
-  constructor() { }
-
-  ngOnInit() {
+  get searchTerm () {
+    return this._searchTerm;
+  }
+  set searchTerm (value: string) {
+    this._searchTerm = value;
+    this.filteredProject = this.searchTerm ? this.performFilter(this.searchTerm) : this.projects;
+    this.crud.emittedProjects.next(this.filteredProject);
+  }
+  constructor(
+    private crud: CrudService
+  ) {
+    this.filteredProject = this.projects;
   }
 
+  ngOnInit() {
+    this.crud.getProjects().subscribe((data: Array<IProject>) => {
+      this.projects = data;
+    });
+  }
+
+  performFilter (filterBy: string) {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.projects.filter((project: IProject) => project.constructor.toLocaleLowerCase().indexOf(filterBy) !== -1);
+  }
 }

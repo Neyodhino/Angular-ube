@@ -2,11 +2,10 @@
     <div class="projects__content--header">
         <h1 class="projects__heading">List of projects</h1>
         <div>
-            <button (click)="exportAsExcel()">Export as excel</button>
-            <button (click)="exportAsCsv()">Export as csv</button>
+          <button (click)="exportAsExcel()">Export as excel</button>
         </div>
     </div>
     <div class="projects__content">
-        <app-project></app-project>
+      <app-project [projects] = "projects"></app-project>
     </div>
 </div>
