@@ -1,11 +1,11 @@
 export interface IProject {
-  id: String;
-  projectName: String;
-  constructor: String;
+  id: string;
+  projectName: string;
+  constructor: string;
   startDate: Date;
   endDate: Date;
-  interventionYear: String;
-  location: String;
-  lga: String;
-  Status: String;
+  interventionYear: string;
+  location: string;
+  lga: string;
+  Status: string;
 }

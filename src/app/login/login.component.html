@@ -1,12 +1,12 @@
 <div class="container">
   <div class="login">
     <img src="../../assets/images/Header.png" alt="login header is here">
-    <form action="#" class="login__form">
+    <form [formGroup]="loginForm" (ngSubmit) = 'onSubmit(loginForm.value)' class="login__form">
       <div class=login__form--group>
-        <input type="text" placeholder="Enter username" require/>
+        <input type="text" placeholder="Enter username" required formControlName="email"/>
       </div>
       <div class="login__form--group">
-        <input type="password" placeholder="Enter password" require/>
+        <input type="password" placeholder="Enter password" required formControlName="password"/>
       </div>
       <button class=login__button>Sign in</button>
     </form>
@@ -15,4 +15,6 @@
     <!-- <img src="../../assets/images/footer.png" alt="footer image is here.."> -->
   </footer>
 </div>
+
+
 

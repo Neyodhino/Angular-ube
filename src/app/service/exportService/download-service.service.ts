@@ -26,3 +26,4 @@ export class DownloadService {
     fileSaver.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
   }
 }
+

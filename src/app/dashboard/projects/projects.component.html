@@ -2,10 +2,34 @@
     <div class="projects__content--header">
         <h1 class="projects__heading">List of projects</h1>
         <div>
-          <button (click)="exportAsExcel()">Export as excel</button>
+          <button (click)="modalTrigger()" >Export Project</button>
         </div>
     </div>
     <div class="projects__content">
       <app-project [projects] = "projects"></app-project>
     </div>
 </div>
+
+<div #downloadOption class="modal">
+  <app-modal title="Download Options">
+      <form [formGroup]= "downloadOptionForm" (ngSubmit)="onSubmit(downloadOptionForm.value)" >
+          <div class="form__group">
+            <input type="radio" class="form__radio--input" id="pdf" formControlName="download" value="pdf">
+            <label for="pdf" class="form__radio--label">
+              <span class="form__radio--button"></span>
+              Download as PDF
+            </label>
+          </div>
+          <div class="form__group">
+              <input type="radio" class="form__radio--input" id="excel" formControlName="download" value="excel">
+              <label for="excel" class="form__radio--label">
+                <span class="form__radio--button"></span>
+                Download as Excel
+              </label>
+            </div>
+
+            <button class="btn">Download</button>
+        </form>
+  </app-modal>
+<div>
+

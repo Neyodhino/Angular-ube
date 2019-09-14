@@ -1,8 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { DownloadService } from '../../service/download-service.service';
-import { CrudService } from '../../service/crud/crud.service';
+import { Component, OnInit, OnDestroy, Renderer2, ElementRef, ViewChild } from '@angular/core';
+import { DownloadService } from '../../service/exportService/download-service.service';
+import { CrudService } from '../../service/crudService/crud.service';
 import { Subscription } from 'rxjs';
 import { IProject } from '../../models/project';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-projects',
@@ -14,13 +15,19 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   projects: Array<IProject>;
   projectsSubscription: Subscription;
 
+  downloadOptionForm: FormGroup;
+
+  @ViewChild('downloadOption') downloadOption: ElementRef<any>;
+
   constructor(
-    private download: DownloadService,
-    private crud: CrudService
+    private downloadService: DownloadService,
+    private crud: CrudService,
+    private renderer: Renderer2,
+    private elRef: ElementRef
   ) {
     this.crud.getProjects().subscribe((response: Array<IProject>) => {
       this.projects = response;
-    })
+    });
   }
 
   ngOnInit() {
@@ -30,12 +37,28 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     error => {
       console.log(error);
     });
+
+    let download = new FormControl ();
+
+    this.downloadOptionForm = new FormGroup ({
+      download : download
+    });
   }
-  exportAsExcel (data: Array<Object>): void {
-    this.download.exportAsExcelFile(this.projects, 'Universal Basic Eduction')
+
+  modalTrigger() {
+    this.renderer.setStyle(this.downloadOption.nativeElement, 'display', 'block');
   }
+
+  onSubmit(value: any) {
+    if (value.download === 'excel') {
+      this.downloadService.exportAsExcelFile(this.projects, 'Universal Basic Eduction');
+    }
+    this.renderer.setStyle(this.downloadOption.nativeElement, 'display', 'none');
+  }
+
 
   ngOnDestroy(): void {
     this.projectsSubscription.unsubscribe();
   }
 }
+

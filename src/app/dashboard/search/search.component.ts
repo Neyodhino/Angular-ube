@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faSearch} from '@fortawesome/free-solid-svg-icons';
-import { CrudService } from '../../service/crud/crud.service';
+import { CrudService } from '../../service/crudService/crud.service';
 import { IProject } from 'src/app/models/project';
 
 @Component({
@@ -26,9 +26,7 @@ export class SearchComponent implements OnInit {
   }
   constructor(
     private crud: CrudService
-  ) {
-    this.filteredProject = this.projects;
-  }
+  ) { }
 
   ngOnInit() {
     this.crud.getProjects().subscribe((data: Array<IProject>) => {
@@ -38,6 +36,7 @@ export class SearchComponent implements OnInit {
 
   performFilter (filterBy: string) {
     filterBy = filterBy.toLocaleLowerCase();
-    return this.projects.filter((project: IProject) => project.constructor.toLocaleLowerCase().indexOf(filterBy) !== -1);
+    return this.projects.filter((project: IProject) => project.projectName.toLocaleLowerCase().indexOf(filterBy) !== -1 || project
+      .location.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 }

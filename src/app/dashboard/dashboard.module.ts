@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchComponent } from './search/search.component';
+import { ModalComponent } from '../shared/modal/modal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectComponent } from './project/project.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -17,7 +18,8 @@ import { ProjectsComponent } from './projects/projects.component';
     SidebarComponent,
     SearchComponent,
     ProjectComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,
