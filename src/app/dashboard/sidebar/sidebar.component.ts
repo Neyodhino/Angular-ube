@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faTruckPickup, faCheckCircle, faHourglass } from '@fortawesome/free-solid-svg-icons';
+import { faPlusCircle, faCheckCircle, faHourglass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +8,7 @@ import { faTruckPickup, faCheckCircle, faHourglass } from '@fortawesome/free-sol
 })
 export class SidebarComponent implements OnInit {
 
-  constructionIcon = faTruckPickup;
+  addProjectIcon = faPlusCircle;
   completedIcon = faCheckCircle;
   uncompletedIcon = faHourglass;
 

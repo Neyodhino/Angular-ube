@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
+import { IProject } from '../models/project';
+import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
+
+import { AuthenticationService } from '../service/authService/authentication.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +11,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  projects: IProject;
+  logoutIcon = faPowerOff;
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private auth: AuthenticationService
+  ) { }
 
   ngOnInit() {
+    this.projects = this.activatedRoute.snapshot.data['resolvedProjects'];
+    console.log(this.projects);
   }
 
+  logOut() {
+    this.auth.logOutUser();
+  }
 }

@@ -40,3 +40,4 @@ export class SearchComponent implements OnInit {
       .location.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 }
+

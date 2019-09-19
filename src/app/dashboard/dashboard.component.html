@@ -1,10 +1,24 @@
 <div class="dashboard">
-  <!-- <app-sidebar></app-sidebar> -->
-  <div class="content">
-    <div data-header>
-      <app-search></app-search>
+    <app-sidebar></app-sidebar>
+    <div class="content">
+        <div data-header>
+            <div class="header__search">
+                <app-search></app-search>
+            </div>
+            <div class="header__icon">
+                <div class="header__icon-content">
+                    <fa-icon
+                        [icon]='logoutIcon'
+                        class="logout__icon"
+                    >
+                    </fa-icon>
+                    <div class="login__dropdown">
+                        <p class="login__dropdown-content" (click)="logOut()" >Logout</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <router-outlet></router-outlet> -->
+        <app-projects></app-projects>
     </div>
-    <!-- <router-outlet></router-outlet> -->
-    <app-projects></app-projects>
-  </div>
 </div>

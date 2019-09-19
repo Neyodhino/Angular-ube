@@ -7,7 +7,7 @@ const dashboardRoute: Routes = [
   {path: 'dashboard', component: DashboardComponent, children: [
 
   ]}
-]
+];
 
 @NgModule({
   declarations: [],
@@ -20,3 +20,4 @@ const dashboardRoute: Routes = [
   ]
 })
 export class DashboardRoutingModule { }
+

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/database';
 import * as firebase from 'firebase/app';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { IProject } from '../../models/project';
 
 @Injectable({
@@ -13,12 +12,11 @@ export class CrudService {
   emittedProjects: Subject<IProject[]>  = new Subject<IProject[]>();
 
   constructor(
-    private db: AngularFireDatabase,
     private firestore: AngularFirestore
   ) { }
 
-  public getProjects() {
-    return this.firestore.collection('projects').valueChanges();
+  public getProjects(): Observable<IProject[]> {
+    return this.firestore.collection<IProject>('projects').valueChanges();
   }
 
   public searchProject(searchTerm: String) {
