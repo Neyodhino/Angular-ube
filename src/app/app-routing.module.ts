@@ -5,17 +5,14 @@ import { LoginComponent } from './login/login.component';
 import { ProjectsResolverService } from './service/projectResolver/projects-resolver.service';
 import { AuthGuard } from './service/authService/auth.guard';
 
-const ROUTES: Routes = [
+const appRoute: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent,
-    resolve: {resolvedProjects: ProjectsResolverService},
-    canActivate: [AuthGuard]
-  },
+  { path: 'dashboard', component: DashboardComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(ROUTES)],
+  imports: [RouterModule.forRoot(appRoute)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

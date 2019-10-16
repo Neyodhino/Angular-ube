@@ -1,0 +1,69 @@
+<div class="projects">
+  <div class="projects__content--header">
+      <h1 class="projects__heading">Fill in the form to add more project</h1>
+  </div>
+  <div class="projects__content">
+    <form class="form" [formGroup]='editProjectForm' (ngSubmit)="editProject(editProjectForm.value)" >
+      <div class="form__group">
+        <label for="project_name" class="form__group-label">Project Name</label>
+        <input type="text" id="project_name" class="form__group-control" formControlName="projectName"
+          [ngClass]="{'is_invalid' : editProjectForm.get('projectName').touched && !editProjectForm.get('projectName').valid}"
+        />
+        <span class="invalid__info" *ngIf="editProjectForm.get('projectName').touched && editProjectForm.get('projectName').errors" >Please enter a project Name</span>
+      </div>
+      <div class="form__group">
+        <label for="contractor" class="form__group-label">Contractor</label>
+        <input type="text" id="contractor" class="form__group-control" formControlName="contractor"
+        [ngClass]="{'is_invalid' : editProjectForm.get('contractor').touched && !editProjectForm.get('contractor').valid}"
+        />
+        <span class="invalid__info" *ngIf="editProjectForm.get('contractor').touched && editProjectForm.get('contractor').errors" >Please enter the project contractor</span>
+      </div>
+      <div class="form__group">
+        <label for="start_date" class="form__group-label">Start Date</label>
+        <input type="text" id="start_date" class="form__group-control" formControlName="startDate"
+        [ngClass]="{'is_invalid' : editProjectForm.get('startDate').touched && !editProjectForm.get('startDate').valid}"
+        />
+        <span class="invalid__info" *ngIf="editProjectForm.get('startDate').touched && editProjectForm.get('startDate').errors" >Please enter the project start date</span>
+      </div>
+      <div class="form__group">
+        <label for="end_date" class="form__group-label">End Date</label>
+        <input type="text" id="end_date" class="form__group-control" formControlName="endDate"
+        [ngClass]="{'is_invalid' : editProjectForm.get('endDate').touched && !editProjectForm.get('endDate').valid}"
+        />
+        <span class="invalid__info" *ngIf="editProjectForm.get('endDate').touched && editProjectForm.get('endDate').errors" >Please enter the project end date</span>
+      </div>
+      <div class="form__group">
+        <label for="year_of_intervention" class="form__group-label">Year of Intervention</label>
+        <input type="text" id="year_of_intervention" class="form__group-control" formControlName="yearOfIntervention"
+        [ngClass]="{'is_invalid' : editProjectForm.get('yearOfIntervention').touched && !editProjectForm.get('yearOfIntervention').valid}"
+        />
+        <span class="invalid__info" *ngIf="editProjectForm.get('yearOfIntervention').touched && editProjectForm.get('yearOfIntervention').errors" >Please enter the year of intervention</span>
+      </div>
+      <div class="form__group">
+        <label for="location" class="form__group-label">Location</label>
+        <input type="text" id="location" class="form__group-control" formControlName="location"
+        [ngClass]="{'is_invalid' : editProjectForm.get('location').touched && !editProjectForm.get('location').valid}"
+        />
+        <span class="invalid__info" *ngIf="editProjectForm.get('location').touched && editProjectForm.get('location').errors" >Please enter project location</span>
+      </div>
+      <div class="form__group">
+        <label for="lga" class="form__group-label">Local Government Area</label>
+        <input type="text" id="lga" class="form__group-control" formControlName="lga"
+        [ngClass]="{'is_invalid' : editProjectForm.get('lga').touched && !editProjectForm.get('lga').valid}"
+        />
+        <span class="invalid__info" *ngIf="editProjectForm.get('lga').touched && editProjectForm.get('lga').errors" >Please enter project local government area</span>
+      </div>
+      <div class="form__group">
+        <label for="status" class="form__group-label">Status</label>
+        <input type="text" id="status" class="form__group-control" formControlName="status"
+        [ngClass]="{'is_invalid' : editProjectForm.get('status').touched && !editProjectForm.get('status').valid}"
+        />
+        <span class="invalid__info" *ngIf="editProjectForm.get('status').touched && editProjectForm.get('status').errors" >Please enter project status</span>
+      </div>
+      <button class="btn" [disabled]='!editProjectForm.valid'>Submit</button>
+      <button class="btn__cancel" (click)="cancelEditProject()" >Cancel</button>
+    </form>
+  </div>
+</div>
+
+

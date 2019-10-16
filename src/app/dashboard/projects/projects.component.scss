@@ -1,4 +1,5 @@
 @import '../../../styles/abstracts/variables';
+@import '../../../styles/abstracts/button';
 
 .projects{
     margin: 60px auto;
@@ -93,20 +94,6 @@ form{
 }
 .form__radio--input:checked ~ .form__radio--label .form__radio--button::after{
   opacity: 1;
-}
-.btn{
-  margin-top: 5px;
-  float: right;
-  margin-left: 10px;
-  outline: none;
-  border: none;
-  padding: 10px 13px;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 2.2rem;
-  font-family: inherit;
-  background-color: $mainColor;
-  cursor: pointer;
 }
 .modal {
   display: none;

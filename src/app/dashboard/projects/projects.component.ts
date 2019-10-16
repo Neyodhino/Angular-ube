@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
 
   downloadOptionForm: FormGroup;
 
-  @ViewChild('downloadOption') downloadOption: ElementRef<any>;
+  @ViewChild('downloadOption') downloadOption: ElementRef;
 
   constructor(
     private downloadService: DownloadService,
@@ -25,9 +25,14 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     private renderer: Renderer2,
     private elRef: ElementRef
   ) {
-    this.crud.getProjects().subscribe((response: Array<IProject>) => {
-      this.projects = response;
-    });
+    this.crud.getProjects().subscribe((response) => {
+      this.projects = response.map(item => {
+        return {
+          id: item.payload.doc.id,
+          ...item.payload.doc.data()
+        };
+      });
+  });
   }
 
   ngOnInit() {
@@ -38,8 +43,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       console.log(error);
     });
 
-    let download = new FormControl ();
-
+    const download = new FormControl ();
     this.downloadOptionForm = new FormGroup ({
       download : download
     });
@@ -61,5 +65,6 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     this.projectsSubscription.unsubscribe();
   }
 }
+
 
 

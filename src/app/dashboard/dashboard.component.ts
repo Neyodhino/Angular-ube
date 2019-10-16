@@ -20,7 +20,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.projects = this.activatedRoute.snapshot.data['resolvedProjects'];
-    console.log(this.projects);
   }
 
   logOut() {

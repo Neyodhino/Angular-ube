@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-//All components declaration
+// All components declaration
 import { DashboardComponent } from './dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchComponent } from './search/search.component';
@@ -11,6 +11,8 @@ import { ModalComponent } from '../shared/modal/modal.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProjectComponent } from './project/project.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { AddProjectComponent } from './add-project/add-project.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,17 @@ import { ProjectsComponent } from './projects/projects.component';
     SearchComponent,
     ProjectComponent,
     ProjectsComponent,
-    ModalComponent
+    ModalComponent,
+    AddProjectComponent,
+    EditProfileComponent
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DashboardRoutingModule
   ]
 })
 export class DashboardModule { }
+

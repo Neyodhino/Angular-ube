@@ -22,7 +22,7 @@ export class AuthenticationService {
   loginUser(value: UserInterface): any {
     this.afAuth.auth.signInWithEmailAndPassword(value.email, value.password)
       .then(_ => {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['dashboard/projects']);
         this.toastr.success('You are Logged in successfully', 'Notification!');
       })
       .catch((err) => {

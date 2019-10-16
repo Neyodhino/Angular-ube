@@ -25,14 +25,14 @@ import { ModalTriggerDirective } from './shared/modalTrigger/modal-trigger.direc
     BrowserModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    DashboardModule,
     FormsModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AppRoutingModule
+    AppRoutingModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

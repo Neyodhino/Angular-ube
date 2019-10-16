@@ -14,24 +14,31 @@ export class SearchComponent implements OnInit {
   filteredProject: Array<IProject>;
 
   searchIcon = faSearch;
-  _searchTerm: string;
+  private _searchTerm: string;
 
   get searchTerm () {
     return this._searchTerm;
   }
+
   set searchTerm (value: string) {
     this._searchTerm = value;
     this.filteredProject = this.searchTerm ? this.performFilter(this.searchTerm) : this.projects;
     this.crud.emittedProjects.next(this.filteredProject);
   }
+
   constructor(
     private crud: CrudService
   ) { }
 
   ngOnInit() {
-    this.crud.getProjects().subscribe((data: Array<IProject>) => {
-      this.projects = data;
-    });
+    this.crud.getProjects().subscribe((response) => {
+      this.projects = response.map(item => {
+        return {
+          id: item.payload.doc.id,
+          ...item.payload.doc.data()
+        };
+      });
+  });
   }
 
   performFilter (filterBy: string) {
@@ -40,4 +47,5 @@ export class SearchComponent implements OnInit {
       .location.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 }
+
 
