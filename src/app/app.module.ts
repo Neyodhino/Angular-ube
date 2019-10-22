@@ -14,12 +14,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ModalTriggerDirective } from './shared/modalTrigger/modal-trigger.directive';
+import { ScrollableDirective } from './shared/scrollable/scrollable.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ModalTriggerDirective,
+    ScrollableDirective,
   ],
   imports: [
     BrowserModule,

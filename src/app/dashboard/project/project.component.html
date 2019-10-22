@@ -69,8 +69,8 @@
         <div
         class="col col-10"
          >
-        <a class="btn" routerLink = '/dashboard/edit-project/{{project.id}}'>Edit</a>
-        <a class="btn">Delete</a>
+        <a class="btn" routerLink = '/dashboard/edit-project/{{project.id}}' style="margin-right: 10px;">Edit</a>
+        <a class="btn" (click)="deleteProject(project.id)" >Delete</a>
     </div>
     </li>
 </ul>

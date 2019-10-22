@@ -8,7 +8,6 @@ import { AuthGuard } from './service/authService/auth.guard';
 const appRoute: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent}
 ];
 
 @NgModule({
@@ -16,4 +15,5 @@ const appRoute: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
 

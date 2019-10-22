@@ -51,14 +51,14 @@
   color: #fff;
   padding: 17px 15px;
   border-radius: 5px;
-  margin-left: 10px;
+  margin-left: 15px;
 
   &::before {
     content: "";
-    position: absolute;
+    display: inline-block;
     width: 0;
     height: 0;
-    margin-left: -25px;
+    margin-left: -26px;
     margin-top: 7px;
     border-top: 16px solid transparent;
     border-bottom: 16px solid transparent;

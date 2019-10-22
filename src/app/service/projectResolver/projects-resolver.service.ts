@@ -8,15 +8,14 @@ import { IProject } from '../../models/project';
 @Injectable({
   providedIn: 'root'
 })
-export class ProjectsResolverService implements Resolve<IProject[]> {
+export class ProjectsResolverService implements Resolve<any> {
 
   constructor(
     private crud: CrudService
   ) { }
 
-  resolve (
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<IProject[]> {
+  resolve ( route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
       return this.crud.getProjects();
   }
 }
+

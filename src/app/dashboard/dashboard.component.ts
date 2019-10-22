@@ -22,6 +22,10 @@ export class DashboardComponent implements OnInit {
     this.projects = this.activatedRoute.snapshot.data['resolvedProjects'];
   }
 
+  scrollHandler (e) {
+    console.log(e);
+  }
+
   logOut() {
     this.auth.logOutUser();
   }

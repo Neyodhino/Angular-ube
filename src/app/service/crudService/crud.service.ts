@@ -38,4 +38,8 @@ export class CrudService {
     this.notification.success('Record has been updated successfully', 'Notification');
     this.router.navigate(['/dashboard/projects']);
   }
+
+  deleteProject(projectId: string) {
+    this.firestore.doc('projects/' + projectId).delete();
+  }
 }

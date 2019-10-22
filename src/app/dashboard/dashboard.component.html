@@ -1,6 +1,6 @@
 <div class="dashboard">
     <app-sidebar></app-sidebar>
-    <div class="content">
+    <div class="content" appScrollable (scrollPosition) = "scrollHandler($event)">
         <div data-header>
             <div class="header__search">
                 <app-search></app-search>
@@ -23,3 +23,4 @@
         </section>
     </div>
 </div>
+
